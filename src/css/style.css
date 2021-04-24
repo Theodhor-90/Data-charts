@@ -1,0 +1,141 @@
+*{
+  box-sizing: border-box;
+  transition: transform 0.3s, color 0.3s, background-color 0.3s, width 0.3s;
+}
+
+html, body{
+  width: 100%;
+  overflow-x: hidden;
+  min-height: 500px;;
+}
+
+@font-face {
+  src: url(./../assets/fonts/Roboto/Roboto-Black.ttf);
+  font-family: Roboto-Bold;
+}
+@font-face {
+  src: url(./../assets/fonts/Roboto/Roboto-Regular.ttf);
+  font-family: Roboto-MediumItalic;
+}
+@font-face {
+  src: url(./../assets/fonts/Roboto/Roboto-LightItalic.ttf);
+  font-family: Roboto-Light;
+}
+
+.roboto-bold{
+  font-family: Roboto-Bold;
+}
+
+.roboto-italic{
+  font-family: Roboto-MediumItalic;
+}
+
+.roboto-light{
+  font-family: Roboto-Light;
+}
+
+body{
+  overflow-x: hidden;
+}
+
+div{
+  font-family: Roboto-Light;
+}
+
+.flex{
+  display: flex;
+  align-items: center;
+}
+
+.around{
+  justify-content: space-around;
+}
+
+.between{
+  justify-content: space-between;
+}
+
+.align-center{
+  align-items: center;
+}
+
+.centralizer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.flex-wrapper{
+  flex-wrap: wrap;
+}
+
+.column{
+  flex-direction: column;
+}
+
+.fw{
+  width: 100%;
+}
+
+.fh{
+  height: 100%;
+}
+
+.circular{
+  border-radius: 50%;
+}
+
+.v-padding-small{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.v-padding-medium{
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.v-margin-small{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.v-margin-medium{
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.border-regular{
+  border: 1px solid var(--regular);
+}
+
+.absolute{
+  position: absolute;
+}
+
+.relative{
+  position: relative;
+}
+
+.disabled{
+  pointer-events: none;
+  font-family: Roboto-Bold;
+}
+
+.no-default{
+  text-decoration: none;
+}
+
+.p-25{
+  padding: 25px 0;
+}
+
+.p-10{
+  padding: 10px 0;
+}
+
+.p-h-10{
+  padding: 0 10px;
+}
+
