@@ -17,12 +17,12 @@
 }
 
 .intro{
-  margin: 0 auto;
+  margin: 25px auto 0;
   max-width: 1200px;
-  height: 150px;
-  font-size: 40px;
+  height: 75px;
+  font-size: 25px;
   border-bottom: 2px solid grey;
-  font-family: Roboto-MediumItalic;
+  font-family: Roboto-Light;
   text-align: center;
 }
 
