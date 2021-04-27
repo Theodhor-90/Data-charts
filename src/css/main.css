@@ -1,0 +1,23 @@
+.main{
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.info-container{
+    width: 27%;
+    min-height: 110px;
+    height: auto;
+}
+
+.back-bad{
+    background-color: #FFEFEF;   
+}
+
+.back-normal{
+    background-color: #fafafa;
+}
+
+.back-good{
+    background-color: #ccffbd7a;
+}

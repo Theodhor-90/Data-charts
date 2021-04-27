@@ -1,41 +1,41 @@
 import { Doughnut } from 'react-chartjs-2';
+import TrendingUp from './../icons/TrendingUp';
+import TrendingDown from './../icons/TrendingDown';
+import Calendar from './../icons/Calendar';
+import Danger from './../icons/Danger';
+import mathBox from './../../js/avarage';
+import Info from './Info';
+import classAssigner from './../../js/classAssigner'
+
+function formatNumber(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
 
 const Overview = (props) => {
-    const info = [props.england[0].newCases,props.scotland[0].newCases,props.wales[0].newCases,props.ireland[0].newCases];
+   const results = mathBox(props.england,'england');
+   const classNames = classAssigner(results);
 
-    const data = {
-        labels: ['England', 'Scotland', 'Wales', 'Northern Ireland'],
-        datasets: [
-          {
-            label: 'New cases yesterday',
-            data: info,
-            backgroundColor: [
-              'rgba(255, 99, 132, 0.2)',
-              'rgba(54, 162, 235, 0.2)',
-              'rgba(255, 206, 86, 0.2)',
-              'rgba(75, 192, 192, 0.2)'
-            ],
-            borderColor: [
-              'rgba(255, 99, 132, 1)',
-              'rgba(54, 162, 235, 1)',
-              'rgba(255, 206, 86, 1)',
-              'rgba(75, 192, 192, 1)'
-            ],
-            borderWidth: 1,
-          },
-        ],
-      };
-
-    console.log(data)
     return(
-        <div className='box'>
-            <Doughnut 
-            data={data} 
-            options={{
-                responsive: true,
-                maintainAspectRatio: true,
-              }}/>
-        </div>
+      <div className='flex fw around p-10'>
+        <Info 
+          dataIcon={results.trending > 0 ? TrendingUp : TrendingDown}
+          dataNumber={`${results.trending}%`}
+          dataText={'Increase from previous day'}
+          backGround={classNames.trending}
+        />
+        <Info 
+          dataIcon={Danger}
+          dataNumber={formatNumber(results.cases)}
+          dataText={'New cases from Yesterday'}
+          backGround={classNames.weeklyAvarage}
+        />
+        <Info 
+          dataIcon={Calendar}
+          dataNumber={formatNumber(results.weeklyAvarage)}
+          dataText={results.weeklyText}
+          backGround={'back-normal'}
+        />
+      </div>
     )
 }
 

@@ -8,6 +8,7 @@ import './css/style.css';
 import './css/navbar.css';
 import './css/media.css';
 import './css/charts.css';
+import './css/main.css';
 
 class App extends React.Component {
   constructor(){
@@ -44,17 +45,20 @@ class App extends React.Component {
   }
 
   render(){
-    console.log(this.state);
+    if(this.state.england && this.state.uk){
+      console.log(this.state.england[0],this.state.uk[0]);
+    }
     return(
       this.state.uk? 
-      <div>
+      <div className="main">
         <Navbar handleKey={this.handleKey} navbarKey={this.state.navbarKey} />
         <Intro country={this.state.navbarKey} />
         <Overview 
           england={this.state.england} 
           scotland={this.state.scotland} 
           wales={this.state.wales} 
-          ireland={this.state.ireland} />
+          ireland={this.state.ireland} 
+          data={this.state[this.state.navbarKey]}/>
       </div>
       
       :  
