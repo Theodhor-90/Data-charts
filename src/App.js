@@ -46,19 +46,22 @@ class App extends React.Component {
 
   render(){
     if(this.state.england && this.state.uk){
-      console.log(this.state.england[0],this.state.uk[0]);
+      console.log(this.state.uk[0],this.state.uk[1]);
     }
     return(
       this.state.uk? 
       <div className="main">
         <Navbar handleKey={this.handleKey} navbarKey={this.state.navbarKey} />
+        <div className='flex'>
         <Intro country={this.state.navbarKey} />
         <Overview 
           england={this.state.england} 
           scotland={this.state.scotland} 
           wales={this.state.wales} 
           ireland={this.state.ireland} 
-          data={this.state[this.state.navbarKey]}/>
+          data={this.state[this.state.navbarKey]}
+          navbarKey={this.state.navbarKey}/>
+        </div>
       </div>
       
       :  

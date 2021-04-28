@@ -12,11 +12,11 @@ function formatNumber(x) {
 }
 
 const Overview = (props) => {
-   const results = mathBox(props.england,'england');
+   const results = mathBox(props.data,props.navbarKey);
    const classNames = classAssigner(results);
 
     return(
-      <div className='flex fw around p-10'>
+      <div className='flex column p-10 flex-wrapper fw around p-10'>
         <Info 
           dataIcon={results.trending > 0 ? TrendingUp : TrendingDown}
           dataNumber={`${results.trending}%`}

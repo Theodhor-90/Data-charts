@@ -6,7 +6,8 @@
 html, body{
   width: 100%;
   overflow-x: hidden;
-  min-height: 500px;;
+  min-height: 500px;
+  height: auto;
 }
 
 @font-face {
@@ -137,5 +138,10 @@ div{
 
 .p-h-10{
   padding: 0 10px;
+}
+
+.map{
+  height: 250px;
+  width: auto;
 }
 

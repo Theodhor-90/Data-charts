@@ -10,7 +10,7 @@ function mathBox(entry,area){
         } 
         cases = entry[0].dailyCases;
         diff = entry[0].dailyCases - entry[1].dailyCases;
-        coeff = entry[1].dailyCases/diff
+        coeff = diff/entry[1].dailyCases;
     } else  for(let a=0; a<30; a++){
         monthlySum = monthlySum + entry[a].newCases
         if(a===6){
