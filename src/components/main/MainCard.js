@@ -1,5 +1,5 @@
 
-const Info = (props) => {
+const MainCard = (props) => {
 
     return(
         <div className={`info-container flex around ${props.backGround}`}>
@@ -7,7 +7,7 @@ const Info = (props) => {
                 <props.dataIcon />
             </div>
             <div className='flex column around'>
-                <div>{props.dataNumber}</div>
+                <div className='roboto-bold p-10'>{props.dataNumber}</div>
                 <div>{props.dataText}</div>
             </div>
 
@@ -15,4 +15,4 @@ const Info = (props) => {
     )
 }
 
-export default Info;
+export default MainCard;

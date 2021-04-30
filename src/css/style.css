@@ -16,23 +16,52 @@ html, body{
 }
 @font-face {
   src: url(./../assets/fonts/Roboto/Roboto-Regular.ttf);
-  font-family: Roboto-MediumItalic;
+  font-family: Roboto;
 }
 @font-face {
-  src: url(./../assets/fonts/Roboto/Roboto-LightItalic.ttf);
+  src: url(./../assets/fonts/Roboto/Roboto-Thin.ttf);
   font-family: Roboto-Light;
 }
+
+@font-face {
+  src: url(./../assets/fonts/Roboto_Condensed/RobotoCondensed-Regular.ttf);
+  font-family: Roboto-Condensed;
+}
+
+@font-face {
+  src: url(./../assets/fonts/Roboto_Condensed/RobotoCondensed-Bold.ttf);
+  font-family: Roboto-Condensed-Bold;
+}
+
+@font-face {
+  src: url(./../assets/fonts/Roboto_Condensed/RobotoCondensed-Light.ttf);
+  font-family: Roboto-Condensed-Light;
+}
+
+
 
 .roboto-bold{
   font-family: Roboto-Bold;
 }
 
-.roboto-italic{
-  font-family: Roboto-MediumItalic;
+.roboto{
+  font-family: Roboto;
 }
 
 .roboto-light{
   font-family: Roboto-Light;
+}
+
+.roboto-condensed{
+  font-family: Roboto-Condensed;
+}
+
+.roboto-condensed-bold{
+  font-family: Roboto-Condensed-Bold;
+}
+
+.roboto-condensed-light{
+  font-family: Roboto-Condensed-Light;
 }
 
 body{
@@ -40,7 +69,7 @@ body{
 }
 
 div{
-  font-family: Roboto-Light;
+  font-family: Roboto-light;
 }
 
 .flex{
@@ -145,3 +174,12 @@ div{
   width: auto;
 }
 
+.half-container{
+  width: 50%;
+  padding: 10px;
+}
+
+.third-container{
+  width: 30%;
+  padding: 10px;
+}

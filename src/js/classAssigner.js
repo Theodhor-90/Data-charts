@@ -4,16 +4,16 @@ function classAssigner(entry){
         weeklyAvarage = 'back-good';
         monthlyAvarage = 'back-good';
     } else {
-        if(entry.cases > entry.weeklyAvarage){
+        if(entry.dailyCases > entry.weeklyCasesAvarage){
             weeklyAvarage = 'back-bad'
         } else weeklyAvarage = 'back-normal';
-        if(entry.cases > entry.monthlyAvarage){
+        if(entry.dailyCases > entry.monthlyCasesAvarage){
             monthlyAvarage = 'back-bad'
         } else monthlyAvarage = 'back-normal'
     }
-    if(entry.trending>0){
+    if(entry.increase>0){
         trending = 'back-bad'
-    } else if(entry.trending===0){
+    } else if(entry.increase===0){
         trending = 'back-normal'
     } else trending = 'back-good'
     return{

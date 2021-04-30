@@ -1,42 +1,40 @@
-import { Doughnut } from 'react-chartjs-2';
+import MainCard from './MainCard';
 import TrendingUp from './../icons/TrendingUp';
 import TrendingDown from './../icons/TrendingDown';
 import Calendar from './../icons/Calendar';
 import Danger from './../icons/Danger';
-import mathBox from './../../js/avarage';
-import Info from './Info';
 import classAssigner from './../../js/classAssigner'
 
 function formatNumber(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
-const Overview = (props) => {
-   const results = mathBox(props.data,props.navbarKey);
-   const classNames = classAssigner(results);
+const MainInfo = (props) => {
+   const classNames = classAssigner(props.data);
 
     return(
-      <div className='flex column p-10 flex-wrapper fw around p-10'>
-        <Info 
-          dataIcon={results.trending > 0 ? TrendingUp : TrendingDown}
-          dataNumber={`${results.trending}%`}
+      <div className='flex column  flex-wrapper  around third-container'>
+
+        <MainCard
+          dataIcon={props.data.increase > 0 ? TrendingUp : TrendingDown}
+          dataNumber={`${props.data.increase}%`}
           dataText={'Increase from previous day'}
           backGround={classNames.trending}
         />
-        <Info 
+        <MainCard
           dataIcon={Danger}
-          dataNumber={formatNumber(results.cases)}
+          dataNumber={formatNumber(props.data.dailyCases)}
           dataText={'New cases from Yesterday'}
           backGround={classNames.weeklyAvarage}
         />
-        <Info 
+        <MainCard
           dataIcon={Calendar}
-          dataNumber={formatNumber(results.weeklyAvarage)}
-          dataText={results.weeklyText}
+          dataNumber={formatNumber(props.data.weeklyCasesAvarage)}
+          dataText={'Last 7 days avarage'}
           backGround={'back-normal'}
         />
       </div>
     )
 }
 
-export default Overview;
+export default MainInfo;

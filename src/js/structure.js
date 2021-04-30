@@ -20,4 +20,28 @@ const structure = {
     ireland
 }
 
+export const labels = [
+    {
+      value: 'uk',
+      text: 'United Kingdom'
+    },
+    {
+      value: 'england',
+      text: 'England'
+    },
+    {
+      value: 'scotland',
+      text: 'Scotland'
+    },
+    {
+      value: 'wales',
+      text: 'Wales'
+    },
+    {
+      value: 'ireland',
+      text: 'Northern Ireland'
+    }
+  ];
+
 export default structure;
+

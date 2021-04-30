@@ -1,9 +1,12 @@
 import React from 'react';
 import axios from 'axios';
 import structure from './js/structure';
-import Navbar from './components/navbar/Navbar';
-import Intro from './components/Intro';
-import Overview from './components/charts/Overview';
+import { labels } from './js/structure';
+import Navbar from './components/header/Navbar';
+import Main from './components/main/Main';
+import Title from './components/header/Title';
+import Footer from './components/footer/Footer';
+import stateStarter from './js/stateStarter';
 import './css/style.css';
 import './css/navbar.css';
 import './css/media.css';
@@ -14,11 +17,6 @@ class App extends React.Component {
   constructor(){
     super();
     this.state = {
-      uk: null,
-      england: null,
-      scotland: null,
-      wales: null,
-      ireland: null, 
       navbarKey: 'uk'
     }
     this.handleKey = this.handleKey.bind(this);
@@ -35,33 +33,25 @@ class App extends React.Component {
       axios.get(structure.scotland),
       axios.get(structure.wales),
       axios.get(structure.ireland)
-    ]).then(axios.spread((data1,data2,data3,data4,data5) => this.setState({
-      uk: data1.data.data,
-      england: data2.data.data,
-      scotland: data3.data.data,
-      wales: data4.data.data,
-      ireland: data5.data.data
-    })))
+    ]).then(axios.spread((data1,data2,data3,data4,data5) => {
+      //console.log(data1.data.data,data2.data.data)
+      this.setState({ data:stateStarter([data1.data.data,data2.data.data,data3.data.data,data4.data.data,data5.data.data],labels)})
+    }));
   }
 
   render(){
-    if(this.state.england && this.state.uk){
-      console.log(this.state.uk[0],this.state.uk[1]);
+    if(this.state.data){
+      console.log(this.state);
     }
     return(
-      this.state.uk? 
+      this.state.data? 
       <div className="main">
         <Navbar handleKey={this.handleKey} navbarKey={this.state.navbarKey} />
-        <div className='flex'>
-        <Intro country={this.state.navbarKey} />
-        <Overview 
-          england={this.state.england} 
-          scotland={this.state.scotland} 
-          wales={this.state.wales} 
-          ireland={this.state.ireland} 
-          data={this.state[this.state.navbarKey]}
-          navbarKey={this.state.navbarKey}/>
+        <div className='flex flex-wrapper'>
+          <Title country={this.state.navbarKey} />
+          <Main data={this.state.data} navbarKey={this.state.navbarKey} />
         </div>
+        <Footer />
       </div>
       
       :  
