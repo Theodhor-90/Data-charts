@@ -14,9 +14,19 @@ class Main extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-
+            chartShow: 'weekly'
         }
+        this.setWeekly = this.setWeekly.bind(this);
+        this.setMonthly = this.setMonthly.bind(this);
     }
+
+    setWeekly(){
+        this.setState({chartShow: 'weekly'})
+      }
+      setMonthly(){
+          console.log(this.state)
+        this.setState({chartShow: 'monthly'})
+      }
 
     render(){
         return(
@@ -35,7 +45,12 @@ class Main extends React.Component {
                     }
                     <MainInfo data={this.props.data[this.props.navbarKey].data}/>
                 </div>
-                <LineChart weeklyCases={this.props.data[this.props.navbarKey].data.weeklyCases} />
+                <LineChart 
+                weeklyCases={this.props.data[this.props.navbarKey].data.weeklyCases} 
+                monthlyCases={this.props.data[this.props.navbarKey].data.monthlyCases}
+                chartShow={this.state.chartShow}
+                setMonthly={this.setMonthly}
+                setWeekly={this.setWeekly}/>
             </div>
          
         )

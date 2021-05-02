@@ -2,9 +2,9 @@
 
 const FooterCard = (props) => {
     return(
-        <div className='flex column around footer-element p-25'>
+        <div className='flex column around footer-element p-25 fw-mobile'>
             <div className='centralizer roboto-condensed-bold size-25 v-padding-small'>{props.title}</div>
-            <div className='flex around back-normal'>
+            <div className='flex fw-mobile around back-normal'>
                 <div className='centralizer footer-left padding-small'>
                     <img className='icon p-10 footer' src={props.icon} alt='nothing' /> 
                 </div>

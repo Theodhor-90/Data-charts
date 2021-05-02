@@ -6,11 +6,11 @@ import Navbar from './components/header/Navbar';
 import Main from './components/main/Main';
 import Title from './components/header/Title';
 import Footer from './components/footer/Footer';
+import Credits from './components/credits/Credits';
 import stateStarter from './js/stateStarter';
 import './css/style.css';
 import './css/navbar.css';
 import './css/media.css';
-import './css/charts.css';
 import './css/main.css';
 
 class App extends React.Component {
@@ -23,7 +23,7 @@ class App extends React.Component {
   }
 
   handleKey(entry){
-    this.setState({navbarKey: entry})   
+    this.setState({navbarKey: entry, chartShow: 'weekly'})   
   }
 
   componentDidMount(){
@@ -48,10 +48,12 @@ class App extends React.Component {
       <div className="main">
         <Navbar handleKey={this.handleKey} navbarKey={this.state.navbarKey} />
         <div className='flex flex-wrapper'>
-          <Title country={this.state.navbarKey} />
-          <Main data={this.state.data} navbarKey={this.state.navbarKey} />
+          <Title country={this.state.navbarKey} date={this.state.data[this.state.navbarKey].data.weeklyCases[0].date} />
+          <Main data={this.state.data}  navbarKey={this.state.navbarKey} />
+
         </div>
         <Footer />
+        <Credits />
       </div>
       
       :  

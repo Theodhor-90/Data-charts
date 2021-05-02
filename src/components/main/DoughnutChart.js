@@ -30,12 +30,10 @@ const DoughnutChart = (props) => {
     <div className='centralizer third-container'>
         <div className='box'>
           <Doughnut 
+          width={300}
+          height={300}
           data={data} 
-          options={{
-              responsive: true,
-              maintainAspectRatio: true,
-              cutout: '65%'
-            }}/>
+          />
         </div>
     </div>
   )

@@ -21,7 +21,7 @@ const Map = (props) => {
     }
 
     return(
-        <div className='centralizer third-container'>
+        <div className='centralizer third-container fw-mobile'>
             <img className='map' src={map} alt='norhing' />
         </div>
         

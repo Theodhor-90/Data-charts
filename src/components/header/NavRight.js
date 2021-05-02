@@ -28,10 +28,6 @@ const NavRight = (props) =>{
         onClick={() => props.handleKey('ireland')}>
           N.Ireland
       </div>
-      <div
-        className={props.navbarKey === 'source' ? 'centralizer nav-el disabled' : 'centralizer nav-el'}
-        onClick={() => props.handleKey('source')}
-        >Source</div>
     </div>
   )
 }

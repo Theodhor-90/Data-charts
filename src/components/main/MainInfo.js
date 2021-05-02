@@ -13,7 +13,7 @@ const MainInfo = (props) => {
    const classNames = classAssigner(props.data);
 
     return(
-      <div className='flex column  flex-wrapper  around third-container'>
+      <div className='flex column  flex-wrapper  around third-container fw-mobile'>
 
         <MainCard
           dataIcon={props.data.increase > 0 ? TrendingUp : TrendingDown}

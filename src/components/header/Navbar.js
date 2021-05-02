@@ -27,8 +27,8 @@ class Header extends React.Component{
 
   render(){
     return(
-      <div className={`nav-container ${this.state.burger ? 'burger-active' : ''}`}>
-        <div className='navbar flex between fw fh absolute'>
+      <div className={`nav-container  ${this.state.burger ? 'burger-active' : ''}`}>
+        <div className='navbar flex between back-normal fw fh absolute'>
           <div className='navbar-left flex fh'>
             <div className='centralizer roboto-bold'>Covid UK</div>
           </div>

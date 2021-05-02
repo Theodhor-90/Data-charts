@@ -1,15 +1,12 @@
 .navbar{
   max-width: 1200px;
   height: 75px;
-
   z-index: 2;
-  background-color: lightgray;
 }
 
 .nav-mobile{
   max-width: 1200px;
   height: 75px;
-  border-bottom: 2px solid grey;
   z-index: 1;
   background-color: white;
 }
