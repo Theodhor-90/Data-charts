@@ -39,7 +39,8 @@ function chartData(entry,condition){
     result.monthlyDeathsAvarage = parseInt(deathsSum/30);
     result.dailyCases = entry[0][casesPar];
     result.dailyDeaths = entry[0][deathsPar];
-    result.increase = parseInt(((entry[0][casesPar]-entry[1][casesPar])/entry[1][casesPar])*100);
+    const increase = parseInt(((entry[0][casesPar]-entry[1][casesPar])/entry[1][casesPar])*100);
+    result.increase = increase ? increase : 999; 
     result.weeklyCases = weeklyCases;
     result.weeklyDeaths = weeklyDeaths;
 
